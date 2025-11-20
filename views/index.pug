@@ -11,10 +11,6 @@ block content
         span Completed
       else
         pan Not Completed
-      //delete button
-      form(method='POST' action='/delete', style='display:inline')
-        input(type='hidden', name='id', value=val.id)
-        button(type='submit') Delete
       //edit button
       form(method='POST' action='/edit')
         input(type='hidden', name='id', value=val.id)
@@ -24,6 +20,10 @@ block content
       form(method='POST' action='/complete')
         input(type='hidden', name='id', value=val.id)
         button(type='submit') Mark as completed
+      //delete button
+      form(method='POST' action='/delete')
+        input(type='hidden', name='id', value=val.id)
+        button(type='submit') Delete
 
   hr
   h2 Add a new task
