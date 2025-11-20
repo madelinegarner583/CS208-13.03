@@ -1,6 +1,6 @@
 body {
   margin: auto;
-  margin-top: 150px;
+  margin-top: 50px;
   display: table;
   border: outset;
   border-color: purple;
@@ -14,6 +14,10 @@ a {
 
 h1, h2 {
   color: purple;
+}
+
+li {
+  padding: 5px;
 }
 
 button:hover {
