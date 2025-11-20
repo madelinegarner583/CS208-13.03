@@ -16,8 +16,9 @@ block content
         input(type='hidden', name='id', value=val.id)
         button(type='submit') Delete
       //edit button
-      form(method='POST' action='/edit', style='display:inline')
+      form(method='POST' action='/edit')
         input(type='hidden', name='id', value=val.id)
+        input(type='text', name='task', placeholder='Edit task description')
         button(type='submit') Edit
       //complete button
       form(method='POST' action='/complete')

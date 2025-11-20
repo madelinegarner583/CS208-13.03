@@ -54,9 +54,9 @@ router.post('/delete', function (req, res, next) {
 });
 
 router.post('/edit', function (req, res, next) {
-    const { id } = req.body;
+    const { id, task } = req.body;
     try {
-      req.db.query('UPDATE todos WHERE id = ?;', [id], (err, results) => {
+      req.db.query('UPDATE todos SET task = ? WHERE id = ?;', [task, id], (err, results) => {
         if (err) {
           console.error('Error updating todo:', err);
           return res.status(500).send('Error updating todo');
