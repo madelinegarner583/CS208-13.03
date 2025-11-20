@@ -53,4 +53,40 @@ router.post('/delete', function (req, res, next) {
     }
 });
 
+router.post('/edit', function (req, res, next) {
+    const { id } = req.body;
+    try {
+      req.db.query('UPDATE todos WHERE id = ?;', [id], (err, results) => {
+        if (err) {
+          console.error('Error updating todo:', err);
+          return res.status(500).send('Error updating todo');
+        }
+        console.log('Todo updated successfully:', results);
+        // Redirect to the home page after updating
+        res.redirect('/');
+    });
+    }catch (error) {
+        console.error('Error updating todo:', error);
+        res.status(500).send('Error updating todo:');
+    }
+});
+
+router.post('/complete', function (req, res, next) {
+    const { id } = req.body;
+    try {
+      req.db.query('UPDATE todos SET completed = 1 WHERE id = ?;', [id], (err, results) => {
+        if (err) {
+          console.error('Error completing todo:', err);
+          return res.status(500).send('Error completing todo');
+        }
+        console.log('Todo completed successfully:', results);
+        // Redirect to the home page after completing
+        res.redirect('/');
+    });
+    }catch (error) {
+        console.error('Error completing todo:', error);
+        res.status(500).send('Error completing todo:');
+    }
+});
+
 module.exports = router;

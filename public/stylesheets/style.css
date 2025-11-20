@@ -1,8 +1,21 @@
 body {
+  margin: auto;
+  margin-top: 150px;
+  display: table;
+  border: outset;
+  border-color: purple;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+h1, h2 {
+  color: purple;
+}
+
+button:hover {
+  color: purple;
 }
