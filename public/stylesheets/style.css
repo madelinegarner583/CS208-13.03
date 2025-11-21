@@ -1,8 +1,9 @@
 body {
   margin: auto;
-  margin-top: 50px;
+  margin-top: 100px;
   display: table;
-  border: outset;
+  border: groove;
+  border-width: 50px;
   border-color: purple;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -12,8 +13,13 @@ a {
   color: #00B7FF;
 }
 
+li {
+  list-style-type: square;
+  font-weight: bold;
+}
+
 h1, h2 {
-  color: purple;
+  color: rgb(93, 1, 93);
 }
 
 li {
@@ -21,5 +27,5 @@ li {
 }
 
 button:hover {
-  color: purple;
+  color: rgb(93, 1, 93);
 }

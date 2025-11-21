@@ -10,11 +10,11 @@ block content
       if val.completed > 0
         span Completed
       else
-        pan Not Completed
+        span Not Completed
       //edit button
       form(method='POST' action='/edit')
         input(type='hidden', name='id', value=val.id)
-        input(type='text', name='task', placeholder='Edit task description')
+        input(type='text', name='task', placeholder='Edit task description', required)
         button(type='submit') Edit
       //complete button
       form(method='POST' action='/complete')
@@ -29,5 +29,5 @@ block content
   h2 Add a new task
   form(method='POST' action='/create')
     label(for='task') Task:
-    input(type='text', name='task', id='task', required)
+    input(type='text', name='task', placeholder='Task description', id='task', required)
     button(type='submit') Create Task

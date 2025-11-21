@@ -17,6 +17,7 @@ router.get('/', function(req, res, next){
   }
 });
 
+/* Create a new task. */
 router.post('/create', function (req, res, next) {
     const { task } = req.body;
     try {
@@ -26,7 +27,6 @@ router.post('/create', function (req, res, next) {
           return res.status(500).send('Error adding todo');
         }
         console.log('Todo added successfully:', results);
-        // Redirect to the home page after adding
         res.redirect('/');
       });
     } catch (error) {
@@ -35,6 +35,7 @@ router.post('/create', function (req, res, next) {
     }
 });
 
+/* Delete a task. */
 router.post('/delete', function (req, res, next) {
     const { id } = req.body;
     try {
@@ -44,7 +45,6 @@ router.post('/delete', function (req, res, next) {
           return res.status(500).send('Error deleting todo');
         }
         console.log('Todo deleted successfully:', results);
-        // Redirect to the home page after deletion
         res.redirect('/');
     });
     }catch (error) {
@@ -53,6 +53,7 @@ router.post('/delete', function (req, res, next) {
     }
 });
 
+/* Edit a task. */
 router.post('/edit', function (req, res, next) {
     const { id, task } = req.body;
     try {
@@ -62,7 +63,6 @@ router.post('/edit', function (req, res, next) {
           return res.status(500).send('Error updating todo');
         }
         console.log('Todo updated successfully:', results);
-        // Redirect to the home page after updating
         res.redirect('/');
     });
     }catch (error) {
@@ -71,6 +71,7 @@ router.post('/edit', function (req, res, next) {
     }
 });
 
+/* Mark a task as completed. */
 router.post('/complete', function (req, res, next) {
     const { id } = req.body;
     try {
@@ -80,7 +81,6 @@ router.post('/complete', function (req, res, next) {
           return res.status(500).send('Error completing todo');
         }
         console.log('Todo completed successfully:', results);
-        // Redirect to the home page after completing
         res.redirect('/');
     });
     }catch (error) {
